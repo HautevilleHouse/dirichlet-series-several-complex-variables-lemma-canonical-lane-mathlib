@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean.AdmissibleClass
+import HautevilleHouse.DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean.GateLemmas
+import HautevilleHouse.DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean.DirichletSeriesLayer
+import HautevilleHouse.DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean.SeveralComplexVariablesLayer
+
+namespace HautevilleHouse
+namespace DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean
+
+def ConstrainedDirichletSeriesSeveralVariablesClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_dirichlet_series_several_variables_endgame (A : AdmissibleClass) : ConstrainedDirichletSeriesSeveralVariablesClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DirichletSeriesSeveralComplexVariablesLemmaCanonicalLaneLean
+end HautevilleHouse
